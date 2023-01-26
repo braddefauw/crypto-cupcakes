@@ -43,12 +43,12 @@ app.use(auth(config));
 app.get('/', (req, res) => {
   console.log(req.oidc.user);
   res.send(req.oidc.isAuthenticated() ? `
-  <h2 style="text-align: center;">My Web App, Inc.</h2>
-  <h2>Welcome, ${req.oidc.user.name}</h2>
-  <p><b>Username: ${req.oidc.user.email}</b></p>
-  <p>${req.oidc.user.email}</p>
-  <img src="${req.oidc.user.picture}" alt="${req.oidc.user.name}">
-  ` : 'Logged out');
+      <h2 style="text-align: center;">My Web App, Inc.</h2>
+      <h2>Welcome, ${req.oidc.user.name}</h2>
+      <p><b>Username: ${req.oidc.user.email}</b></p>
+      <p>${req.oidc.user.email}</p>
+      <img src="${req.oidc.user.picture}" alt="${req.oidc.user.name}">
+    ` : 'Logged out');
 });
 
 app.get('/cupcakes', async (req, res, next) => {
